@@ -21,26 +21,26 @@ public class Greedy {
 					  secuencia.add(mejor);
 					  resto = resto - mejor.getPiezas();
 				  } else {
+					//Si no hay un candidato adecuado devolvemos null
 					  System.out.println("No hay una solucion adecuada");
 				  }
 
 
 		  }
 	        // Mostrar resultados
-	        System.out.println(total);
-	        System.out.println("Candidatos evaluados: " + candidatosConsiderados);
-	        for(Maquina m : secuencia) {
-	        	System.out.println(m.getNombre() + "-" + m.getPiezas());
+	        System.out.println("Cantidad de piezas buscadas: " +total);
+			for(Maquina m : secuencia) {
+	        	System.out.print("["+m.getNombre() + "-" + m.getPiezas() + " piezas" + "]");
 	        }
+			System.out.println();
+			System.out.println("Cantidad de de candidatos considerados: " + maq.size());
 	}
 
 	public static Maquina mejorCandidato(List<Maquina> machine, int objetivo){
 		for(int i = 0; i < machine.size(); i++){
 			//si la maquina hace mas piezas de las que necesito no la necesito mas
-			if(machine.get(i).getPiezas() <= objetivo){
+			if(machine.get(i).getPiezas() <= objetivo) {
 				return machine.get(i);
-			} else {
-				machine.remove(i);
 			}
 		}
 		return null;
