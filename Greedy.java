@@ -25,7 +25,7 @@ public class Greedy {
 					  System.out.println("No hay una solucion adecuada");
 				  }
 
-
+//Dddd
 		  }
 	        // Mostrar resultados
 	        System.out.println("Cantidad de piezas buscadas: " +total);
